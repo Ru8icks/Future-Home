@@ -110,13 +110,7 @@ export class TestComponent implements OnInit {
     )
   }
 
-  getReadMe(name){
-    this.testService.getReadMe(name).subscribe((data:any) => {
-      console.log(data)
-      this.test=data;
-    })
-  }
-
+ 
 
   
 

@@ -71,16 +71,6 @@ export class TestService {
 
 
 
-  getReadMe(name){
-   
-    let readme = this.http.get("https://api.github.com/repos/"+name+"/readme")
-
-    return readme
-    .pipe(
-      retry(3), // retry a failed request up to 3 times
-      catchError(this.handleError) // then handle the error
-    );
-  }
 
 
 

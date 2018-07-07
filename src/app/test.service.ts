@@ -62,18 +62,8 @@ export class TestService {
     
   }
 
-  getRepos(name, language){
-    let url;
-    if(name && !language){
-      url = "https://api.github.com/users/"+name+"/repos"
-      console.log("name")
-
-    } else if(name && language ){
-      url = "https://api.github.com/users/"+name+"/repos"+"language:"+language
-      console.log("name + lang")
-    }
-    let repos = this.http.get(url)
-    return repos
+  getRepos(name){
+    return this.http.get("https://api.github.com/users/"+name+"/repos")    
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error

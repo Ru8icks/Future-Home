@@ -18,10 +18,10 @@ import { HttpClient } from '@angular/common/http';
 
 export class TestComponent implements OnInit {
   error: string;
-  users;
-  data;
-  repos;
-  readme;
+  users: Array<object>;
+  data: Array<object>;;
+  repos: Array<object>;;
+  
   
   
 
@@ -64,6 +64,7 @@ export class TestComponent implements OnInit {
     this.users = null;
     this.repos = null;
     this.data = null;
+    this.error= '';
     this.testService.search(name,repo,language).subscribe((data:any)=> {
       
       if (data.items[0].login){
@@ -71,7 +72,7 @@ export class TestComponent implements OnInit {
         console.log("users")
       } else {
         this.repos=data.items
-        console.log("repos")
+        console.log("repos",  data.items)
       }
 
       
@@ -87,7 +88,7 @@ export class TestComponent implements OnInit {
 
 
 
- selectUser(name, language){
+ selectUser(name){
    console.log("selected user")
    
    this.testService.getUser(name).subscribe((data :any ) => {
@@ -98,7 +99,7 @@ export class TestComponent implements OnInit {
   error => this.error = error
   )
   console.log("username and lang")
-  this.testService.getRepos(name, language).subscribe((data :any ) => {
+  this.testService.getRepos(name).subscribe((data :any ) => {
     console.log(data)
     this.repos=data;
       
@@ -108,19 +109,6 @@ export class TestComponent implements OnInit {
     )
   }
 
-  viewReadMe(name,repo){
-    console.log("view is clicked")
-    this.testService.getReadMe(name,repo).subscribe((data :any ) => {
-      console.log(data)
-      this.readme=data.content;
-     
-
-
-      
-    }, 
-    error => this.error = error
-    )
-  }
 
 
   

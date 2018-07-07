@@ -19,8 +19,9 @@ import { HttpClient } from '@angular/common/http';
 export class TestComponent implements OnInit {
   error: string;
   users: Array<object>;
-  data: Array<object>;;
-  repos: Array<object>;;
+  data: Array<object>;
+  repos: Array<object>;
+  test;
   
   
   
@@ -109,6 +110,12 @@ export class TestComponent implements OnInit {
     )
   }
 
+  getReadMe(name){
+    this.testService.getReadMe(name).subscribe((data:any) => {
+      console.log(data)
+      this.test=data;
+    })
+  }
 
 
   

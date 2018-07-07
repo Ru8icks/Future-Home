@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {  throwError } from 'rxjs';
 
-import { map, catchError, retry } from 'rxjs/operators';
+import {  catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -51,10 +51,7 @@ export class TestService {
   
 
   getUser(name){
-    let user = this.http.get('https://api.github.com/users/'+name);
-    
-
-    return user
+    return this.http.get('https://api.github.com/users/'+name)
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
@@ -74,9 +71,9 @@ export class TestService {
 
 
 
-  getReadMe(name, repo){
+  getReadMe(name){
    
-    let readme = this.http.get("https://api.github.com/repos/"+name+"/"+repo+"/readme")
+    let readme = this.http.get("https://api.github.com/repos/"+name+"/readme")
 
     return readme
     .pipe(

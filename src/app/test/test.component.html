@@ -2,33 +2,26 @@
 
 
 <form [formGroup]="searchForm">
-  <div>
+  <div class="search">
     <label>Search:
         <input #name placeholder="Users"formControlName="name"  >
         <input #repo placeholder="Repositories"formControlName="repo">
         <input #language placeholder="Language"formControlName="language">       
     </label>
+    <div class="searchButton" >
+        <button class="roundButton" [disabled]="!searchForm.valid" (click)="search(name.value, repo.value, language.value)">Search</button>
+    </div>
   </div>
+  
   
 
 </form>
-<button [disabled]="!searchForm.valid" (click)="search(name.value, repo.value, language.value)">Search</button>
+
 <p>Form value: {{ searchForm.value | json }}</p>
 <p>Form status: {{ searchForm.status | json }}</p>
 
 <p style="color:red;" *ngIf="error">{{ error }}</p>
-<div>
-  
-  <div *ngIf="users">
-    <h2>Users:</h2>
-    <ul>
-        <li *ngFor="let user of users">
-           <button (click)="selectUser(user.login, language.value)">{{user.login}}</button>
-        </li>
-      </ul> 
-  </div>
-
-  <div *ngIf="data">
+<div *ngIf="data">
     <div>
       <img src="{{data.avatar_url}}" width="100" height="100">
     </div>
@@ -47,13 +40,27 @@
   </div>
     
 
+<div class="flex-container">
+  
+  <div *ngIf="users">
+    <h2>Users</h2>
+    <ul >
+        <li *ngFor="let user of users" class="userList">
+           <button class="userButton" (click)="selectUser(user.login, language.value)">{{user.login}}</button>
+        </li>
+      </ul> 
+  </div>
+
+ 
+
 
   <div *ngIf="repos">
       <h2>Repositories</h2>
-      <ul>
-        <li *ngFor="let repo of repos">
-           <a href={{repo.html_url}}>{{repo.name}}</a>
-           <p>{{repo.description}}</p>
+      <ul class="repoList">
+        <li *ngFor="let repo of repos" class="repoListItem">
+           <a href={{repo.html_url}}><h3>{{repo.name}}</h3></a>
+           
+           <h4>Description:</h4><p> {{repo.description}}</p>
            <p>Language: {{repo.language}}</p>
            <p>Clone url: <input type="text" value="{{repo.clone_url}}" readonly> </p>
            

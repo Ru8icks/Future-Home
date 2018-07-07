@@ -99,7 +99,7 @@ export class TestComponent implements OnInit {
     }, 
   error => this.error = error
   )
-  console.log("username and lang")
+  
   this.testService.getRepos(name).subscribe((data :any ) => {
     console.log(data)
     this.repos=data;

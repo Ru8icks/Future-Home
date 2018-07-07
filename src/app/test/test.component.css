@@ -1,0 +1,68 @@
+
+.search {
+    
+    border: 1vh solid green;
+    border-radius: 4vh;
+    padding-top: 4vh;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.searchButton{
+
+    padding: 2vh;
+    
+}
+
+.roundButton{
+    border-radius: 1vh;
+    padding: 1vh;
+
+
+
+}
+.userButton{
+    border-radius: 1vw;
+    padding: 1vh;
+    width: 25vw;
+    
+}
+.userList{
+    padding-top: 2vh;
+    padding-right: 2vw;
+    border: 1vh solid green;
+    border-radius: 4vh;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    font-family: sans-serif;
+    align-items: flex-start;
+    
+    
+     
+    
+
+  }
+
+  .repolist{
+      padding: 2vh;
+  }
+  .repoListItem{
+    border: 1vh solid green;
+    border-radius: 4vh;
+    padding: 2vh;
+    margin:1vh;
+
+  }
+  .flex-container div {
+    border: 1vh solid green;
+    border-radius: 4vh;
+    margin: 1vh;
+   
+   
+  }
+  ul{ list-style-type: none; }
+  h2{text-align: center;}

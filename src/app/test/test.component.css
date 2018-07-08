@@ -55,7 +55,8 @@
 }
 
 .profilePic img{
-    
+    object-fit: cover;
+ 
     
     
 
@@ -74,6 +75,7 @@
     float: left;
     padding: 2vh;
     margin: 2%;
+    
 
 
 }

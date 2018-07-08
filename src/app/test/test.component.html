@@ -18,13 +18,12 @@
   
 
 </form>
+<div class="wrapper">
+ 
 
-<p>Form value: {{ searchForm.value | json }}</p>
-<p>Form status: {{ searchForm.status | json }}</p>
+  <p style="color:red; font-family: sans-serif;" *ngIf="error" >{{ error }}</p>
 
-<p style="color:red;" *ngIf="error">{{ error }}</p>
-
-<div *ngIf="data" class="userInfo"  >
+  <div *ngIf="data" class="userInfo"  >
     
       <div class="profilePic">
         <img class="profileImage" src="{{data.avatar_url}}" height="100" width="100">
@@ -41,12 +40,12 @@
         <p *ngIf="data.company" >Works at {{data.company}}</p>  
       </div>   
      
-</div>
+  </div>
     
 
-<div class="flex-container">
+  <div class="flex-container">
   
-  <div *ngIf="users">
+  <div *ngIf="users" class="users">
     <h2>Users</h2>
     <ul >
         <li *ngFor="let user of users" class="userList">
@@ -59,23 +58,21 @@
 
 
   <div *ngIf="repos" class="repos">
-      <h2>Repositories</h2>
-      <ul class="repoList">
-        <li *ngFor="let repo of repos" class="repoListItem">
-           <a href={{repo.html_url}}><h3>{{repo.name}}</h3></a>
-           
-           <h4>Description:</h4><p> {{repo.description}}</p>
-           <p>Language: {{repo.language}}</p>
-           <p>Clone url: <input type="text" value="{{repo.clone_url}}" readonly> </p>
-           
-        </li>
-      </ul>   
-      
-    </div>
+    <h2>Repositories</h2>
+    <ul class="repoList">
+      <li *ngFor="let repo of repos" class="repoListItem">
+        <a href={{repo.html_url}}><h3>{{repo.name}}</h3></a>
+        <h4>Description:</h4><p> {{repo.description}}</p>
+        <p>Language: {{repo.language}}</p>
+        <p>Clone url: <input type="text" value="{{repo.clone_url}}" readonly> </p>
+      </li>
+    </ul>     
+  </div>
     
   
 
 
+  </div>
 </div>
 
 

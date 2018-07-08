@@ -2,44 +2,48 @@
 
 .search {
     
-    background-color:  rgb(223, 225, 255);
+    background-color:  #4d94ff;
+    color: white;
     padding-top: 1vh;
     text-align: center;
     font-family: sans-serif;
     margin: 0vh;
-    position: fixed;
-    top: 0vh;
-    left: 0vh;
-    right:0vh;
-    
-    
+  
+
+}
+.wrapper{
+    margin-top: vh;
 }
 
-.searchButton{
 
-    padding: 2vh;
-    
-}
 
 .roundButton{
     border-radius: 1vh;
-    padding: 1vh;
+    margin: 1vh;
+    background-color: white;
+    color: #000;
 
 
 
 }
 .userButton{
-    border-radius: 1vw;
+    
     padding: 1vh;
     width: 25vw;
+    background-color: white;
+    color: #000;
     
 }
 .userList{
     padding: 2vh;
     padding-left: 0vh;
+   
     
-    
-    border-radius: 4vh;
+   
+
+}
+.users{
+    padding-right: 2vh;
 }
 .userInfo{
     font-family: sans-serif;
@@ -47,9 +51,10 @@
 
 
 
-    border: 1vh solid rgb(64, 37, 185);
-    border-radius: 4vh;
-    margin-top: 13vh;
+   
+   
+   
+   
     justify-content: center;
     
 }
@@ -63,18 +68,22 @@
 
 }
 .profileInfo{
-    border: 1vh solid rgb(64, 137, 185);
+    
+    background-color: #e6f0ff;
     
     margin:1vh;
-    min-height: 15vh;
+    padding-top: 1vh;
+    min-height: 20vh;
     
 
 }
 .profilePic{
-    border: 1vh solid black;
+    border: 1px solid black;
     float: left;
     padding: 2vh;
     margin: 2%;
+    background-color: #b3d1ff;
+
     
 
 
@@ -87,11 +96,6 @@
     font-family: sans-serif;
     align-items: flex-start;
     margin:2vh;
-    margin-top: 13vh;
-   
-    
-    
-    
      
     
 
@@ -105,18 +109,19 @@
       
   }
   .repoListItem{
-    border: 1px solid rgb(0, 0, 0);
+   
     
     padding: 2vh;
     margin:1vh;
-    background-color:  rgb(99, 101, 122);
+    margin-right: 4vh;
+    background-color: #b3d1ff;
     
   }
   .flex-container div {
-    border: 1px solid black;
+   
     
     margin: 1vh;
-    background-color:  rgb(236, 237, 252);
+    background-color: #e6f0ff
     
    
 

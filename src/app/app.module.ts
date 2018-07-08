@@ -18,6 +18,8 @@ import { TestService } from './test.service'
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import { TestService } from './test.service'
   ],
   providers: [
     TestService,
+    
   ],
   
   bootstrap: [AppComponent]

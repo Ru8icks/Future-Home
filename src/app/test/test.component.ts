@@ -3,7 +3,7 @@ import {TestService} from '../test.service';
 
 import { FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 
-import { HttpClient } from '@angular/common/http';
+
 
 
 
@@ -35,9 +35,11 @@ export class TestComponent implements OnInit {
 
   
 
-  constructor(private testService : TestService,) {  }
+  constructor(private testService : TestService,
+              ) {  }
 
   ngOnInit() { 
+   
     this.searchForm.setValidators([
       this.oneOfControlRequired(this.searchForm.get('name'), this.searchForm.get('repo'),)
     ])
@@ -70,7 +72,7 @@ export class TestComponent implements OnInit {
       
       if (data.items[0].login){
         this.users=data.items;
-        console.log("users")
+        console.log("users",this.users)
       } else {
         this.repos=data.items
         console.log("repos",  data.items)

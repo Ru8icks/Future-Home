@@ -3,7 +3,9 @@
 
 <form [formGroup]="searchForm">
   <div class="search">
-    <label>Search:
+    <div><h3>Search</h3>
+    <p>Search by user or repository, language is an optional filter</p></div>
+    <label>
         <input #name placeholder="Users"formControlName="name"  >
         <input #repo placeholder="Repositories"formControlName="repo">
         <input #language placeholder="Language"formControlName="language">       
@@ -21,23 +23,25 @@
 <p>Form status: {{ searchForm.status | json }}</p>
 
 <p style="color:red;" *ngIf="error">{{ error }}</p>
-<div *ngIf="data">
-    <div>
-      <img src="{{data.avatar_url}}" width="100" height="100">
-    </div>
-    <div>
-      <h1>{{data.name}}</h1>
-    </div>
-    <div>
-      <a href="{{data.html_url}}">Profile</a>
-    </div>
-    <div *ngIf="data.location">
-      <p>Location: {{data.location}}</p>
-    </div>
-    <div *ngIf="data.company">
-      <p>Works at {{data.company}}</p>    
-    </div>   
-  </div>
+
+<div *ngIf="data" class="userInfo"  >
+    
+      <div class="profilePic">
+        <img class="profileImage" src="{{data.avatar_url}}" height="100" width="100">
+      </div>
+   
+      <div class="profileInfo">
+        <h1>{{data.name}}</h1>
+      
+        <a href="{{data.html_url}}">Profile</a>
+      
+      
+        <p *ngIf="data.location">Location: {{data.location}}</p>
+      
+        <p *ngIf="data.company" >Works at {{data.company}}</p>  
+      </div>   
+     
+</div>
     
 
 <div class="flex-container">
@@ -54,7 +58,7 @@
  
 
 
-  <div *ngIf="repos">
+  <div *ngIf="repos" class="repos">
       <h2>Repositories</h2>
       <ul class="repoList">
         <li *ngFor="let repo of repos" class="repoListItem">

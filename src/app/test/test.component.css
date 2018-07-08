@@ -1,11 +1,18 @@
 
+
 .search {
     
-    border: 1vh solid green;
-    border-radius: 4vh;
-    padding-top: 4vh;
+    background-color:  rgb(223, 225, 255);
+    padding-top: 1vh;
     text-align: center;
     font-family: sans-serif;
+    margin: 0vh;
+    position: fixed;
+    top: 0vh;
+    left: 0vh;
+    right:0vh;
+    
+    
 }
 
 .searchButton{
@@ -28,10 +35,47 @@
     
 }
 .userList{
-    padding-top: 2vh;
-    padding-right: 2vw;
-    border: 1vh solid green;
+    padding: 2vh;
+    padding-left: 0vh;
+    
+    
     border-radius: 4vh;
+}
+.userInfo{
+    font-family: sans-serif;
+    margin:2vh;
+
+
+
+    border: 1vh solid rgb(64, 37, 185);
+    border-radius: 4vh;
+    margin-top: 13vh;
+    justify-content: center;
+    
+}
+
+.profilePic img{
+    
+    
+    
+
+
+}
+.profileInfo{
+    border: 1vh solid rgb(64, 137, 185);
+    
+    margin:1vh;
+    min-height: 15vh;
+    
+
+}
+.profilePic{
+    border: 1vh solid black;
+    float: left;
+    padding: 2vh;
+    margin: 2%;
+
+
 }
 
 .flex-container {
@@ -40,27 +84,40 @@
     flex-direction: row;
     font-family: sans-serif;
     align-items: flex-start;
+    margin:2vh;
+    margin-top: 13vh;
+   
+    
     
     
      
     
 
   }
+  .repos{
+      flex-grow: 2;
+  }
 
   .repolist{
       padding: 2vh;
+      
   }
   .repoListItem{
-    border: 1vh solid green;
-    border-radius: 4vh;
+    border: 1px solid rgb(0, 0, 0);
+    
     padding: 2vh;
     margin:1vh;
-
+    background-color:  rgb(99, 101, 122);
+    
   }
   .flex-container div {
-    border: 1vh solid green;
-    border-radius: 4vh;
+    border: 1px solid black;
+    
     margin: 1vh;
+    background-color:  rgb(236, 237, 252);
+    
+   
+
    
    
   }

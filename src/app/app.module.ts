@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { TestComponent } from './test/test.component'
+import { SearchComponent } from './searchGit/searchGit.component'
 
 
-import { TestService } from './test.service'
+import { SearchService } from './services/search.service'
 
 
 
@@ -23,7 +23,7 @@ import { TestService } from './test.service'
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { TestService } from './test.service'
     FormsModule,
   ],
   providers: [
-    TestService,
+    SearchService,
     
   ],
   

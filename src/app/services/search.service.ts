@@ -7,7 +7,8 @@ import {  catchError, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class TestService {
+export class SearchService {
+  //urls for searching for users and repositories
   private searchUser="https://api.github.com/search/users?q=";
   private searchRepo="https://api.github.com/search/repositories?q=";
 
@@ -17,25 +18,20 @@ export class TestService {
 
 
 
-
+  //search function. Checks if user is searching for users og repos and adds language filter if needed.
   search(name, repo, language){
-    console.log(name,repo,language)
-    let url;
-    
+    let url; 
     if(name && !repo){
       url = this.searchUser+name
-      console.log("name")
       if (language){
         url += "+language:"+language
       }
-
-    } else if(!name && repo){
+    } 
+    else if(!name && repo){
       url = (this.searchRepo+repo)
-      console.log("repo")
       if (language){
         url += "+language:"+language
       }
-
     }
     return this.http.get(url)
       .pipe(
@@ -48,7 +44,7 @@ export class TestService {
   }
 
   
-
+  //gets a user from the api
   getUser(name){
     return this.http.get('https://api.github.com/users/'+name)
     .pipe(
@@ -57,7 +53,7 @@ export class TestService {
     );
     
   }
-
+  //gets all the repos tied to a user
   getRepos(name){
     return this.http.get("https://api.github.com/users/"+name+"/repos")    
     .pipe(

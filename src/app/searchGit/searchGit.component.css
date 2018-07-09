@@ -11,8 +11,6 @@
     font-family: sans-serif;
     margin: 0vh;
     width: auto;
-    
-
 }
 
 
@@ -22,63 +20,52 @@
     margin: 1vh;
     background-color: white;
     color: #000;
-
-
-
 }
-.userButton{
-    
+.roundButton:disabled{
+    opacity: 0.65; 
+    cursor: not-allowed;
+}
+
+.userButton{   
     padding: 1vh;
     width: 25vw;
     background-color: white;
     color: #000;
-    
 }
+
 .userList{
     padding: 1vh;
     padding-left: 0vh;
-   
-   
-    
-   
-
 }
+
 .users{
     padding-right: 2vh;
 }
+
 .userInfo{
     font-family: sans-serif;
     margin:3vh;
-    overflow: auto;
-    
+    overflow: auto;    
 }
 
 .profilePic img{
     object-fit: scale-down;
-
-
 }
+
 .profileInfo{
-    
     background-color: #e6f0ff;
     min-height: 150px;
     margin:1vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    
-
 }
+
 .profilePic{
     border: 1px solid black;
     float: left;
     padding: 2vh;
     margin: 2%;
-
     background-color: #b3d1ff;
-
-    
-
-
 }
 
 .flex-container {
@@ -88,37 +75,27 @@
     font-family: sans-serif;
     align-items: flex-start;
     margin:2vh;
-     
-    
-
   }
+
   .repos{
       flex-grow: 2;
   }
 
   .repolist{
-      padding: 2vh;
-      
+      padding: 2vh;    
   }
-  .repoListItem{
-   
-    
+
+  .repoListItem{  
     padding: 2vh;
     margin:1vh;
     margin-right: 4vh;
     background-color: #b3d1ff;
-    
   }
-  .flex-container div {
-   
-    
+
+  .flex-container div {  
     margin: 1vh;
     background-color: #e6f0ff
-    
-   
-
-   
-   
   }
+  
   ul{ list-style-type: none; }
   h2{text-align: center;}

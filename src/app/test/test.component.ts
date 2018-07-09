@@ -69,8 +69,11 @@ export class TestComponent implements OnInit {
     this.data = null;
     this.error= '';
     this.testService.search(name,repo,language).subscribe((data:any)=> {
-      
-      if (data.items[0].login){
+      console.log(data)
+      if (data.items.length ===0){
+        this.error="No results were found"
+      }
+      else if (data.items[0].login){
         this.users=data.items;
         console.log("users",this.users)
       } else {

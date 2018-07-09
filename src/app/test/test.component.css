@@ -1,5 +1,7 @@
 
 
+
+
 .search {
     
     background-color:  #4d94ff;
@@ -8,11 +10,9 @@
     text-align: center;
     font-family: sans-serif;
     margin: 0vh;
-  
+    width: auto;
+    
 
-}
-.wrapper{
-    margin-top: vh;
 }
 
 
@@ -35,8 +35,9 @@
     
 }
 .userList{
-    padding: 2vh;
+    padding: 1vh;
     padding-left: 0vh;
+   
    
     
    
@@ -47,33 +48,23 @@
 }
 .userInfo{
     font-family: sans-serif;
-    margin:2vh;
-
-
-
-   
-   
-   
-   
-    justify-content: center;
+    margin:3vh;
+    overflow: auto;
     
 }
 
 .profilePic img{
-    object-fit: cover;
- 
-    
-    
+    object-fit: scale-down;
 
 
 }
 .profileInfo{
     
     background-color: #e6f0ff;
-    
+    min-height: 150px;
     margin:1vh;
-    padding-top: 1vh;
-    min-height: 20vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     
 
 }
@@ -82,6 +73,7 @@
     float: left;
     padding: 2vh;
     margin: 2%;
+
     background-color: #b3d1ff;
 
     

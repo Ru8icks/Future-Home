@@ -22,21 +22,20 @@ export class TestService {
     console.log(name,repo,language)
     let url;
     
-    if(name && !repo && !language){
+    if(name && !repo){
       url = this.searchUser+name
       console.log("name")
+      if (language){
+        url += "+language:"+language
+      }
 
-    } else if(!name && repo && !language ){
+    } else if(!name && repo){
       url = (this.searchRepo+repo)
       console.log("repo")
+      if (language){
+        url += "+language:"+language
+      }
 
-    } else if(name && !repo && language ){
-      url = this.searchUser+name+"+language:"+language
-      console.log("name + lang")
-
-    } else if(!name && repo && language ){
-      url =this.searchRepo+repo+"+language:"+language
-      console.log("repo + lang")
     }
     return this.http.get(url)
       .pipe(
